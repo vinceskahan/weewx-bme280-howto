@@ -1,0 +1,22 @@
+
+#------------------------------------------------------------------------
+#
+## default assumes the bme280 is spi (0x76) not i2c (0x77) that we use
+# see https://gitlab.com/wjcarpenter/bme280wx for description of elements
+# and how to get it working end-to-end
+#
+# if you set your altitude correctly, weewx will prefer_hardware by
+# default and put the altitude-corrected value into 'barometer' for you
+#
+[Bme280wx]
+    i2c_port = 1
+    i2c_address = 0x77    # default=0x76 which means SPI not I2C
+    usUnits = US
+    temperatureKeys = inTemp    # default=inTemp
+    temperature_must_have = ""
+    pressureKeys = pressure
+    pressure_must_have = outTemp    # default=outTemp
+    humidityKeys = inHumidity    # default=inHumidity
+    humidity_must_have = ""
+#------------------------------------------------------------------------
+
